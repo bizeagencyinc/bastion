@@ -2,7 +2,7 @@
   "name": "bastion-security",
   "description": "Bastion: security rules, audit-to-fix workflows, and a read-only MCP server for AI coding agents",
   "owner": {
-    "name": "BIZ E-Agency Inc"
+    "name": "Muhammad Faisal"
   },
   "plugins": [
     {

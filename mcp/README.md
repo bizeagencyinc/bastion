@@ -95,4 +95,4 @@ When run from the repo, the server reads the rules from the repo root. `npm pack
 
 ---
 
-<div align="center"><sub><b>BASTION v2.3.0</b> | MIT License | Created by <a href="https://bizeagency.com">BIZ E-Agency Inc</a></sub></div>
+<div align="center"><sub><b>BASTION v2.3.0</b> | MIT License | Created by <a href="https://bizeagency.com">Muhammad Faisal</a></sub></div>

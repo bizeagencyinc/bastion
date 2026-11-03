@@ -45,6 +45,6 @@
 ---
 <!-- ===================== BASTION FOOTER ===================== -->
 <div align="center">
-<sub><b>BASTION v2.3.0</b> | PHP and Laravel Rules | MIT License | Created by <a href="https://bizeagency.com">BIZ E-Agency Inc</a> | <a href="../../README.md">Home</a> | <a href="../../BASTION.md">Core Rules</a> | Next: <a href="nodejs.md">Node.js</a></sub>
+<sub><b>BASTION v2.3.0</b> | PHP and Laravel Rules | MIT License | Created by <a href="https://bizeagency.com">Muhammad Faisal</a> | <a href="../../README.md">Home</a> | <a href="../../BASTION.md">Core Rules</a> | Next: <a href="nodejs.md">Node.js</a></sub>
 </div>
 <!-- ========================================================== -->

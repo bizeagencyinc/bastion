@@ -92,6 +92,6 @@ Pull the latest Bastion and run the installer again. It replaces only Bastion-ow
 ---
 <!-- ===================== BASTION FOOTER ===================== -->
 <div align="center">
-<sub><b>BASTION v2.3.0</b> | Quick Start | MIT License | Created by <a href="https://bizeagency.com">BIZ E-Agency Inc</a> | <a href="../README.md">Home</a> | Next: <a href="integrations.md">Tool Integrations</a></sub>
+<sub><b>BASTION v2.3.0</b> | Quick Start | MIT License | Created by <a href="https://bizeagency.com">Muhammad Faisal</a> | <a href="../README.md">Home</a> | Next: <a href="integrations.md">Tool Integrations</a></sub>
 </div>
 <!-- ========================================================== -->
