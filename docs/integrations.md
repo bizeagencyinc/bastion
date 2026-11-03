@@ -100,6 +100,6 @@ Everything outside the markers is yours and is never changed.
 ---
 <!-- ===================== BASTION FOOTER ===================== -->
 <div align="center">
-<sub><b>BASTION v2.3.0</b> | Tool Integrations | MIT License | <a href="../README.md">Home</a> | Next: <a href="customizing.md">Customizing</a></sub>
+<sub><b>BASTION v2.3.0</b> | Tool Integrations | MIT License | Created by <a href="https://bizeagency.com">BIZ E-Agency Inc</a> | <a href="../README.md">Home</a> | Next: <a href="customizing.md">Customizing</a></sub>
 </div>
 <!-- ========================================================== -->

@@ -80,6 +80,6 @@ For the plugin version the tool prefix is `mcp__plugin_bastion_bastion`.
 ---
 <!-- ===================== BASTION FOOTER ===================== -->
 <div align="center">
-<sub><b>BASTION v2.3.0</b> | MCP and Plugin | MIT License | <a href="../README.md">Home</a> | <a href="integrations.md">Tool Integrations</a></sub>
+<sub><b>BASTION v2.3.0</b> | MCP and Plugin | MIT License | Created by <a href="https://bizeagency.com">BIZ E-Agency Inc</a> | <a href="../README.md">Home</a> | <a href="integrations.md">Tool Integrations</a></sub>
 </div>
 <!-- ========================================================== -->

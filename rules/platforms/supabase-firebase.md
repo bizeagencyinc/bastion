@@ -54,6 +54,6 @@
 ---
 <!-- ===================== BASTION FOOTER ===================== -->
 <div align="center">
-<sub><b>BASTION v2.3.0</b> | Supabase and Firebase Rules | MIT License | <a href="../../README.md">Home</a> | <a href="../../BASTION.md">Core Rules</a> | Next: <a href="cloud-devops.md">Cloud and DevOps</a></sub>
+<sub><b>BASTION v2.3.0</b> | Supabase and Firebase Rules | MIT License | Created by <a href="https://bizeagency.com">BIZ E-Agency Inc</a> | <a href="../../README.md">Home</a> | <a href="../../BASTION.md">Core Rules</a> | Next: <a href="cloud-devops.md">Cloud and DevOps</a></sub>
 </div>
 <!-- ========================================================== -->
