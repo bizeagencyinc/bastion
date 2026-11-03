@@ -257,7 +257,7 @@ No ruleset makes software unhackable. Bastion reduces risk; it does not replace 
 
 **BASTION v2.3.0** | Security Rules for AI Coding Agents
 
-Created by **Muhammad Faisal** | Released under the [MIT License](LICENSE)
+Created by **BIZ E-Agency Inc** | Released under the [MIT License](LICENSE)
 
 <sub>If Bastion helps you ship safer code, give the repo a ⭐ so others can find it.</sub>
 

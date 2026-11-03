@@ -26,7 +26,7 @@ w('.claude-plugin/plugin.json', JSON.stringify({
   name: 'bastion',
   version: pkg.version,
   description: 'Bastion security rules for AI coding agents: 680+ rules, 21 platforms, audit-to-fix workflows, secret guard hook, and a read-only MCP server.',
-  author: { name: 'Muhammad Faisal' },
+  author: { name: 'BIZ E-Agency Inc' },
   homepage: 'https://github.com/bizeagencyinc/bastion',
   repository: 'https://github.com/bizeagencyinc/bastion',
   license: 'MIT',

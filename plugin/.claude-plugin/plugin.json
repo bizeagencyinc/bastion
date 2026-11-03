@@ -3,7 +3,7 @@
   "version": "2.3.0",
   "description": "Bastion security rules for AI coding agents: 680+ rules, 21 platforms, audit-to-fix workflows, secret guard hook, and a read-only MCP server.",
   "author": {
-    "name": "Muhammad Faisal"
+    "name": "BIZ E-Agency Inc"
   },
   "homepage": "https://github.com/bizeagencyinc/bastion",
   "repository": "https://github.com/bizeagencyinc/bastion",
