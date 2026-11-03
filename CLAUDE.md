@@ -4,7 +4,7 @@ This file guides Claude Code when maintaining **this repository** (the Bastion r
 
 ## What this repo is
 
-Bastion v2.3.0: a versioned security rulebook (681 rule IDs, 21 platform files) for AI coding agents, plus installers that generate native rule files for Claude Code, Cursor, Copilot, Windsurf, Cline, Codex (AGENTS.md), Gemini CLI, and VS Code.
+Bastion v2.3.0: a versioned security rulebook (692 rule IDs, 21 platform files) for AI coding agents, plus installers that generate native rule files for Claude Code, Cursor, Copilot, Windsurf, Cline, Codex (AGENTS.md), Gemini CLI, and VS Code.
 
 ## Layout
 

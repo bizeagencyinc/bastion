@@ -12,6 +12,7 @@ All notable changes to Bastion are documented here. This project follows [Semant
 - `.github/workflows/publish.yml`: npm with provenance (trusted publishing), MCP Registry via GitHub OIDC, GitHub release.
 - Installer `--with-mcp` / `-WithMCP` writes `.mcp.json`, `.cursor/mcp.json`, `.vscode/mcp.json`.
 - `docs/mcp.md`; plugin icon `assets/icon.png`.
+- 11 AI pipeline rules `LLM-24` to `LLM-34` in `ai-llm-agents.md`: server-side provider calls, call limits, versioned prompts, RBAC and OAuth identity for retrieval and tools, code-level guardrails, tenant-scoped caching, router and fallback policy, tracing, CI evals, and anomaly alerts. Total is now 692.
 - Workflow commands now fall back to the MCP tools when `.bastion/` is not installed.
 
 ## [2.2.0] - 2026-11-03
