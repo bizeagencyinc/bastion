@@ -99,6 +99,6 @@ tagging a release, or changing repo settings. Never print tokens. Do not use em 
 ---
 <!-- ===================== BASTION FOOTER ===================== -->
 <div align="center">
-<sub><b>BASTION v2.3.0</b> | Handover | MIT License | Created by <a href="https://bizeagency.com">BIZ E-Agency Inc</a> | <a href="README.md">Home</a> | <a href="CLAUDE.md">Maintainer Guide</a> | <a href="docs/mcp.md">MCP and Plugin</a></sub>
+<sub><b>BASTION v2.3.0</b> | Handover | MIT License | Created by <a href="https://bizeagency.com">Muhammad Faisal</a> | <a href="README.md">Home</a> | <a href="CLAUDE.md">Maintainer Guide</a> | <a href="docs/mcp.md">MCP and Plugin</a></sub>
 </div>
 <!-- ========================================================== -->

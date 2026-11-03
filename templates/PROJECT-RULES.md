@@ -40,6 +40,6 @@
 ---
 <!-- ===================== BASTION FOOTER ===================== -->
 <div align="center">
-<sub><b>BASTION v2.3.0</b> | Project Rules | Updated by /bastion-secure | Bastion by <a href="https://bizeagency.com">BIZ E-Agency Inc</a></sub>
+<sub><b>BASTION v2.3.0</b> | Project Rules | Updated by /bastion-secure | Bastion by <a href="https://bizeagency.com">Muhammad Faisal</a></sub>
 </div>
 <!-- ========================================================== -->
