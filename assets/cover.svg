@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640" role="img" aria-label="Bastion: Security Rules for AI Coding Agents">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#060A14"/><stop offset="1" stop-color="#101A33"/></linearGradient>
+    <radialGradient id="glowL" cx="0.17" cy="0.5" r="0.42"><stop offset="0" stop-color="#22D3EE" stop-opacity="0.22"/><stop offset="1" stop-color="#22D3EE" stop-opacity="0"/></radialGradient>
+    <radialGradient id="glowR" cx="0.9" cy="0.1" r="0.5"><stop offset="0" stop-color="#6366F1" stop-opacity="0.25"/><stop offset="1" stop-color="#6366F1" stop-opacity="0"/></radialGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22D3EE"/><stop offset="1" stop-color="#6366F1"/></linearGradient>
+    <linearGradient id="tower" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#67E8F9"/><stop offset="1" stop-color="#818CF8"/></linearGradient>
+    <linearGradient id="title" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#C7D2FE"/></linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0 H0 V40" fill="none" stroke="#1E293B" stroke-width="1"/></pattern>
+  </defs>
+  <rect width="1280" height="640" fill="url(#bg)"/>
+  <rect width="1280" height="640" fill="url(#grid)" opacity="0.55"/>
+  <rect width="1280" height="640" fill="url(#glowL)"/>
+  <rect width="1280" height="640" fill="url(#glowR)"/>
+  <g transform="translate(12 150) scale(2.45)">
+    <path d="M64 6 L114 24 V62 C114 92 92 113 64 122 C36 113 14 92 14 62 V24 Z" fill="#0B1220" stroke="url(#accent)" stroke-width="4.5" stroke-linejoin="round"/>
+    <path d="M40 94 V42 H50 V51 H59 V42 H69 V51 H78 V42 H88 V94 Z" fill="url(#tower)"/>
+    <circle cx="64" cy="68" r="6.5" fill="#0B1220"/>
+    <path d="M60.5 72 L58 87 H70 L67.5 72 Z" fill="#0B1220"/>
+  </g>
+  <g font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <text x="372" y="64" font-size="14" font-weight="700" letter-spacing="3.5" fill="#67E8F9">OPEN SECURITY RULESET  |  v2.3.0  |  2027 READY</text>
+    <text x="368" y="146" font-size="92" font-weight="800" letter-spacing="8" fill="url(#title)">BASTION</text>
+    <text x="372" y="186" font-size="26" font-weight="600" fill="#E2E8F0">Security Rules for AI Coding Agents</text>
+    <text x="372" y="216" font-size="16" fill="#94A3B8">680+ rules  ·  21 platforms  ·  40+ databases  ·  MCP server  ·  Claude Code plugin</text>
+    <text x="372" y="264" font-size="11.5" font-weight="700" letter-spacing="2.5" fill="#22D3EE">LANGUAGES</text>
+    <rect x="372" y="272" width="96" height="25" rx="12.5" fill="#0F2A3D" stroke="#22D3EE" stroke-opacity="0.6"/>
+    <text x="420.0" y="289" text-anchor="middle" font-size="13.5" font-weight="600" fill="#E0F2FE">TypeScript</text>
+    <rect x="475" y="272" width="96" height="25" rx="12.5" fill="#0F2A3D" stroke="#22D3EE" stroke-opacity="0.6"/>
+    <text x="523.0" y="289" text-anchor="middle" font-size="13.5" font-weight="600" fill="#E0F2FE">JavaScript</text>
+    <rect x="578" y="272" width="69" height="25" rx="12.5" fill="#0F2A3D" stroke="#22D3EE" stroke-opacity="0.6"/>
+    <text x="612.5" y="289" text-anchor="middle" font-size="13.5" font-weight="600" fill="#E0F2FE">Python</text>
+    <rect x="654" y="272" width="52" height="25" rx="12.5" fill="#0F2A3D" stroke="#22D3EE" stroke-opacity="0.6"/>
+    <text x="680.0" y="289" text-anchor="middle" font-size="13.5" font-weight="600" fill="#E0F2FE">PHP</text>
+    <rect x="713" y="272" width="62" height="25" rx="12.5" fill="#0F2A3D" stroke="#22D3EE" stroke-opacity="0.6"/>
+    <text x="744.0" y="289" text-anchor="middle" font-size="13.5" font-weight="600" fill="#E0F2FE">Kotlin</text>
+    <rect x="782" y="272" width="56" height="25" rx="12.5" fill="#0F2A3D" stroke="#22D3EE" stroke-opacity="0.6"/>
+    <text x="810.0" y="289" text-anchor="middle" font-size="13.5" font-weight="600" fill="#E0F2FE">Java</text>
+    <rect x="845" y="272" width="60" height="25" rx="12.5" fill="#0F2A3D" stroke="#22D3EE" stroke-opacity="0.6"/>
+    <text x="875.0" y="289" text-anchor="middle" font-size="13.5" font-weight="600" fill="#E0F2FE">Swift</text>
+    <rect x="912" y="272" width="52" height="25" rx="12.5" fill="#0F2A3D" stroke="#22D3EE" stroke-opacity="0.6"/>
+    <text x="938.0" y="289" text-anchor="middle" font-size="13.5" font-weight="600" fill="#E0F2FE">Dart</text>
+    <rect x="971" y="272" width="42" height="25" rx="12.5" fill="#0F2A3D" stroke="#22D3EE" stroke-opacity="0.6"/>
+    <text x="992.0" y="289" text-anchor="middle" font-size="13.5" font-weight="600" fill="#E0F2FE">C#</text>
+    <rect x="1020" y="272" width="50" height="25" rx="12.5" fill="#0F2A3D" stroke="#22D3EE" stroke-opacity="0.6"/>
+    <text x="1045.0" y="289" text-anchor="middle" font-size="13.5" font-weight="600" fill="#E0F2FE">C++</text>
+    <rect x="1077" y="272" width="52" height="25" rx="12.5" fill="#0F2A3D" stroke="#22D3EE" stroke-opacity="0.6"/>
+    <text x="1103.0" y="289" text-anchor="middle" font-size="13.5" font-weight="600" fill="#E0F2FE">SQL</text>
+    <text x="372" y="319" font-size="11.5" font-weight="700" letter-spacing="2.5" fill="#818CF8">FRAMEWORKS</text>
+    <rect x="372" y="327" width="71" height="25" rx="12.5" fill="#1E1B4B" stroke="#818CF8" stroke-opacity="0.6"/>
+    <text x="407.5" y="344" text-anchor="middle" font-size="13.5" font-weight="600" fill="#E0E7FF">Next.js</text>
+    <rect x="450" y="327" width="62" height="25" rx="12.5" fill="#1E1B4B" stroke="#818CF8" stroke-opacity="0.6"/>
+    <text x="481.0" y="344" text-anchor="middle" font-size="13.5" font-weight="600" fill="#E0E7FF">React</text>
+    <rect x="519" y="327" width="49" height="25" rx="12.5" fill="#1E1B4B" stroke="#818CF8" stroke-opacity="0.6"/>
+    <text x="543.5" y="344" text-anchor="middle" font-size="13.5" font-weight="600" fill="#E0E7FF">Vue</text>
+    <rect x="575" y="327" width="66" height="25" rx="12.5" fill="#1E1B4B" stroke="#818CF8" stroke-opacity="0.6"/>
+    <text x="608.0" y="344" text-anchor="middle" font-size="13.5" font-weight="600" fill="#E0E7FF">Svelte</text>
+    <rect x="648" y="327" width="73" height="25" rx="12.5" fill="#1E1B4B" stroke="#818CF8" stroke-opacity="0.6"/>
+    <text x="684.5" y="344" text-anchor="middle" font-size="13.5" font-weight="600" fill="#E0E7FF">Laravel</text>
+    <rect x="728" y="327" width="69" height="25" rx="12.5" fill="#1E1B4B" stroke="#818CF8" stroke-opacity="0.6"/>
+    <text x="762.5" y="344" text-anchor="middle" font-size="13.5" font-weight="600" fill="#E0E7FF">Django</text>
+    <rect x="804" y="327" width="78" height="25" rx="12.5" fill="#1E1B4B" stroke="#818CF8" stroke-opacity="0.6"/>
+    <text x="843.0" y="344" text-anchor="middle" font-size="13.5" font-weight="600" fill="#E0E7FF">FastAPI</text>
+    <rect x="889" y="327" width="72" height="25" rx="12.5" fill="#1E1B4B" stroke="#818CF8" stroke-opacity="0.6"/>
+    <text x="925.0" y="344" text-anchor="middle" font-size="13.5" font-weight="600" fill="#E0E7FF">NestJS</text>
+    <rect x="968" y="327" width="77" height="25" rx="12.5" fill="#1E1B4B" stroke="#818CF8" stroke-opacity="0.6"/>
+    <text x="1006.5" y="344" text-anchor="middle" font-size="13.5" font-weight="600" fill="#E0E7FF">Express</text>
+    <rect x="1052" y="327" width="69" height="25" rx="12.5" fill="#1E1B4B" stroke="#818CF8" stroke-opacity="0.6"/>
+    <text x="1086.5" y="344" text-anchor="middle" font-size="13.5" font-weight="600" fill="#E0E7FF">Flutter</text>
+    <rect x="1128" y="327" width="107" height="25" rx="12.5" fill="#1E1B4B" stroke="#818CF8" stroke-opacity="0.6"/>
+    <text x="1181.5" y="344" text-anchor="middle" font-size="13.5" font-weight="600" fill="#E0E7FF">React Native</text>
+    <rect x="372" y="358" width="79" height="25" rx="12.5" fill="#1E1B4B" stroke="#818CF8" stroke-opacity="0.6"/>
+    <text x="411.5" y="375" text-anchor="middle" font-size="13.5" font-weight="600" fill="#E0E7FF">Electron</text>
+    <rect x="458" y="358" width="58" height="25" rx="12.5" fill="#1E1B4B" stroke="#818CF8" stroke-opacity="0.6"/>
+    <text x="487.0" y="375" text-anchor="middle" font-size="13.5" font-weight="600" fill="#E0E7FF">Tauri</text>
+    <rect x="523" y="358" width="94" height="25" rx="12.5" fill="#1E1B4B" stroke="#818CF8" stroke-opacity="0.6"/>
+    <text x="570.0" y="375" text-anchor="middle" font-size="13.5" font-weight="600" fill="#E0E7FF">WordPress</text>
+    <rect x="624" y="358" width="73" height="25" rx="12.5" fill="#1E1B4B" stroke="#818CF8" stroke-opacity="0.6"/>
+    <text x="660.5" y="375" text-anchor="middle" font-size="13.5" font-weight="600" fill="#E0E7FF">Angular</text>
+    <rect x="704" y="358" width="74" height="25" rx="12.5" fill="#1E1B4B" stroke="#818CF8" stroke-opacity="0.6"/>
+    <text x="741.0" y="375" text-anchor="middle" font-size="13.5" font-weight="600" fill="#E0E7FF">SwiftUI</text>
+    <rect x="785" y="358" width="141" height="25" rx="12.5" fill="#1E1B4B" stroke="#818CF8" stroke-opacity="0.6"/>
+    <text x="855.5" y="375" text-anchor="middle" font-size="13.5" font-weight="600" fill="#E0E7FF">Jetpack Compose</text>
+    <rect x="933" y="358" width="73" height="25" rx="12.5" fill="#1E1B4B" stroke="#818CF8" stroke-opacity="0.6"/>
+    <text x="969.5" y="375" text-anchor="middle" font-size="13.5" font-weight="600" fill="#E0E7FF">Node.js</text>
+    <text x="372" y="405" font-size="11.5" font-weight="700" letter-spacing="2.5" fill="#34D399">DATABASES</text>
+    <rect x="372" y="413" width="102" height="25" rx="12.5" fill="#062F27" stroke="#34D399" stroke-opacity="0.6"/>
+    <text x="423.0" y="430" text-anchor="middle" font-size="13.5" font-weight="600" fill="#D1FAE5">PostgreSQL</text>
+    <rect x="481" y="413" width="71" height="25" rx="12.5" fill="#062F27" stroke="#34D399" stroke-opacity="0.6"/>
+    <text x="516.5" y="430" text-anchor="middle" font-size="13.5" font-weight="600" fill="#D1FAE5">MySQL</text>
+    <rect x="559" y="413" width="99" height="25" rx="12.5" fill="#062F27" stroke="#34D399" stroke-opacity="0.6"/>
+    <text x="608.5" y="430" text-anchor="middle" font-size="13.5" font-weight="600" fill="#D1FAE5">SQL Server</text>
+    <rect x="665" y="413" width="66" height="25" rx="12.5" fill="#062F27" stroke="#34D399" stroke-opacity="0.6"/>
+    <text x="698.0" y="430" text-anchor="middle" font-size="13.5" font-weight="600" fill="#D1FAE5">Oracle</text>
+    <rect x="738" y="413" width="85" height="25" rx="12.5" fill="#062F27" stroke="#34D399" stroke-opacity="0.6"/>
+    <text x="780.5" y="430" text-anchor="middle" font-size="13.5" font-weight="600" fill="#D1FAE5">MongoDB</text>
+    <rect x="830" y="413" width="60" height="25" rx="12.5" fill="#062F27" stroke="#34D399" stroke-opacity="0.6"/>
+    <text x="860.0" y="430" text-anchor="middle" font-size="13.5" font-weight="600" fill="#D1FAE5">Redis</text>
+    <rect x="897" y="413" width="87" height="25" rx="12.5" fill="#062F27" stroke="#34D399" stroke-opacity="0.6"/>
+    <text x="940.5" y="430" text-anchor="middle" font-size="13.5" font-weight="600" fill="#D1FAE5">Supabase</text>
+    <rect x="991" y="413" width="81" height="25" rx="12.5" fill="#062F27" stroke="#34D399" stroke-opacity="0.6"/>
+    <text x="1031.5" y="430" text-anchor="middle" font-size="13.5" font-weight="600" fill="#D1FAE5">Firebase</text>
+    <rect x="1079" y="413" width="94" height="25" rx="12.5" fill="#062F27" stroke="#34D399" stroke-opacity="0.6"/>
+    <text x="1126.0" y="430" text-anchor="middle" font-size="13.5" font-weight="600" fill="#D1FAE5">DynamoDB</text>
+    <rect x="372" y="444" width="114" height="25" rx="12.5" fill="#062F27" stroke="#34D399" stroke-opacity="0.6"/>
+    <text x="429.0" y="461" text-anchor="middle" font-size="13.5" font-weight="600" fill="#D1FAE5">Elasticsearch</text>
+    <rect x="493" y="444" width="83" height="25" rx="12.5" fill="#062F27" stroke="#34D399" stroke-opacity="0.6"/>
+    <text x="534.5" y="461" text-anchor="middle" font-size="13.5" font-weight="600" fill="#D1FAE5">Pinecone</text>
+    <rect x="583" y="444" width="93" height="25" rx="12.5" fill="#062F27" stroke="#34D399" stroke-opacity="0.6"/>
+    <text x="629.5" y="461" text-anchor="middle" font-size="13.5" font-weight="600" fill="#D1FAE5">Snowflake</text>
+    <rect x="683" y="444" width="69" height="25" rx="12.5" fill="#062F27" stroke="#34D399" stroke-opacity="0.6"/>
+    <text x="717.5" y="461" text-anchor="middle" font-size="13.5" font-weight="600" fill="#D1FAE5">SQLite</text>
+    <rect x="759" y="444" width="79" height="25" rx="12.5" fill="#062F27" stroke="#34D399" stroke-opacity="0.6"/>
+    <text x="798.5" y="461" text-anchor="middle" font-size="13.5" font-weight="600" fill="#D1FAE5">MariaDB</text>
+    <rect x="845" y="444" width="92" height="25" rx="12.5" fill="#062F27" stroke="#34D399" stroke-opacity="0.6"/>
+    <text x="891.0" y="461" text-anchor="middle" font-size="13.5" font-weight="600" fill="#D1FAE5">Cassandra</text>
+    <rect x="944" y="444" width="62" height="25" rx="12.5" fill="#062F27" stroke="#34D399" stroke-opacity="0.6"/>
+    <text x="975.0" y="461" text-anchor="middle" font-size="13.5" font-weight="600" fill="#D1FAE5">Neo4j</text>
+    <rect x="1013" y="444" width="97" height="25" rx="12.5" fill="#062F27" stroke="#34D399" stroke-opacity="0.6"/>
+    <text x="1061.5" y="461" text-anchor="middle" font-size="13.5" font-weight="600" fill="#D1FAE5">ClickHouse</text>
+    <rect x="1117" y="444" width="67" height="25" rx="12.5" fill="#062F27" stroke="#34D399" stroke-opacity="0.6"/>
+    <text x="1150.5" y="461" text-anchor="middle" font-size="13.5" font-weight="600" fill="#D1FAE5">Qdrant</text>
+    <text x="372" y="491" font-size="11.5" font-weight="700" letter-spacing="2.5" fill="#F59E0B">PLATFORMS</text>
+    <rect x="372" y="499" width="73" height="25" rx="12.5" fill="#3B2A0A" stroke="#F59E0B" stroke-opacity="0.6"/>
+    <text x="408.5" y="516" text-anchor="middle" font-size="13.5" font-weight="600" fill="#FDE68A">Android</text>
+    <rect x="452" y="499" width="46" height="25" rx="12.5" fill="#3B2A0A" stroke="#F59E0B" stroke-opacity="0.6"/>
+    <text x="475.0" y="516" text-anchor="middle" font-size="13.5" font-weight="600" fill="#FDE68A">iOS</text>
+    <rect x="505" y="499" width="70" height="25" rx="12.5" fill="#3B2A0A" stroke="#F59E0B" stroke-opacity="0.6"/>
+    <text x="540.0" y="516" text-anchor="middle" font-size="13.5" font-weight="600" fill="#FDE68A">macOS</text>
+    <rect x="582" y="499" width="83" height="25" rx="12.5" fill="#3B2A0A" stroke="#F59E0B" stroke-opacity="0.6"/>
+    <text x="623.5" y="516" text-anchor="middle" font-size="13.5" font-weight="600" fill="#FDE68A">Windows</text>
+    <rect x="672" y="499" width="51" height="25" rx="12.5" fill="#3B2A0A" stroke="#F59E0B" stroke-opacity="0.6"/>
+    <text x="697.5" y="516" text-anchor="middle" font-size="13.5" font-weight="600" fill="#FDE68A">Web</text>
+    <rect x="730" y="499" width="60" height="25" rx="12.5" fill="#3B2A0A" stroke="#F59E0B" stroke-opacity="0.6"/>
+    <text x="760.0" y="516" text-anchor="middle" font-size="13.5" font-weight="600" fill="#FDE68A">Cloud</text>
+    <rect x="797" y="499" width="88" height="25" rx="12.5" fill="#3B2A0A" stroke="#F59E0B" stroke-opacity="0.6"/>
+    <text x="841.0" y="516" text-anchor="middle" font-size="13.5" font-weight="600" fill="#FDE68A">AI Agents</text>
+    <rect x="892" y="499" width="89" height="25" rx="12.5" fill="#3B2A0A" stroke="#F59E0B" stroke-opacity="0.6"/>
+    <text x="936.5" y="516" text-anchor="middle" font-size="13.5" font-weight="600" fill="#FDE68A">Payments</text>
+    <rect x="988" y="499" width="76" height="25" rx="12.5" fill="#3B2A0A" stroke="#F59E0B" stroke-opacity="0.6"/>
+    <text x="1026.0" y="516" text-anchor="middle" font-size="13.5" font-weight="600" fill="#FDE68A">Banking</text>
+    <rect x="0" y="584" width="1280" height="56" fill="#060A14" opacity="0.8"/>
+    <rect x="0" y="584" width="1280" height="2" fill="url(#accent)"/>
+    <text x="46" y="618" font-size="16" fill="#94A3B8">Works with</text>
+    <text x="142" y="618" font-size="16" font-weight="600" fill="#E2E8F0">Claude Code  ·  VS Code  ·  Cursor  ·  GitHub Copilot  ·  Windsurf  ·  Cline  ·  Codex  ·  Gemini CLI</text>
+    <text x="1236" y="618" font-size="14" text-anchor="end" fill="#64748B">MIT License</text>
+  </g>
+</svg>

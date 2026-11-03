@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Bastion: Secret scan (gitleaks)",
+      "type": "shell",
+      "command": "gitleaks detect --source . --no-banner --redact",
+      "problemMatcher": []
+    },
+    {
+      "label": "Bastion: Dependency scan (osv-scanner)",
+      "type": "shell",
+      "command": "osv-scanner scan source -r .",
+      "problemMatcher": []
+    },
+    {
+      "label": "Bastion: Static analysis (semgrep)",
+      "type": "shell",
+      "command": "semgrep scan --config auto --error",
+      "problemMatcher": []
+    },
+    {
+      "label": "Bastion: Container and IaC scan (trivy)",
+      "type": "shell",
+      "command": "trivy fs --scanners vuln,secret,misconfig --severity HIGH,CRITICAL .",
+      "problemMatcher": []
+    },
+    {
+      "label": "Bastion: Full local scan",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Bastion: Secret scan (gitleaks)",
+        "Bastion: Dependency scan (osv-scanner)",
+        "Bastion: Static analysis (semgrep)",
+        "Bastion: Container and IaC scan (trivy)"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

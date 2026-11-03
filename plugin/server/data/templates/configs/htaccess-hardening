@@ -1,0 +1,55 @@
+# =====================================================================
+# BASTION TEMPLATE | Apache .htaccess hardening (WordPress, PHP, static sites)
+# Rules: FE-01, FE-02, WP-05, WP-07, WP-08, WP-09, WEB-01
+# Test on staging first. Adjust the CSP to the scripts your site really uses.
+# =====================================================================
+
+# --- Force HTTPS ---
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Block author enumeration (?author=N)
+  RewriteCond %{QUERY_STRING} (^|&)author=\d+ [NC]
+  RewriteRule ^ - [F,L]
+</IfModule>
+
+# --- Security headers ---
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+  # Start in report-only mode, then switch to Content-Security-Policy when clean.
+  Header always set Content-Security-Policy-Report-Only "default-src 'self'; img-src 'self' data: https:; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'"
+  Header always unset X-Powered-By
+</IfModule>
+
+ServerSignature Off
+Options -Indexes
+
+# --- Block sensitive files ---
+<FilesMatch "^(wp-config\.php|readme\.html|license\.txt|\.env.*|composer\.(json|lock)|package(-lock)?\.json|.*\.(bak|old|sql|log|ini|sh|swp|zip|tar|gz))$">
+  Require all denied
+</FilesMatch>
+
+# --- Block hidden files and folders (.git, .svn, .env) ---
+<IfModule mod_rewrite.c>
+  RewriteRule (^|/)\.(?!well-known/) - [F,L]
+</IfModule>
+
+# --- Disable XML-RPC (WP-08). Remove if Jetpack or the mobile app needs it. ---
+<Files xmlrpc.php>
+  Require all denied
+</Files>
+
+# =====================================================================
+# Put the block below in a SEPARATE .htaccess inside wp-content/uploads/
+# to stop PHP execution in uploads (WP-05):
+#
+# <FilesMatch "\.(php|phtml|php\d|phar|pl|py|cgi|sh)$">
+#   Require all denied
+# </FilesMatch>
+# =====================================================================

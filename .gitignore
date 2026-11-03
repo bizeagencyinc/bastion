@@ -1,0 +1,20 @@
+# OS and editor
+.DS_Store
+Thumbs.db
+*.swp
+
+# Secrets (never commit)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Local test output
+/tmp/
+/fixture/
+
+# Dependencies
+node_modules/

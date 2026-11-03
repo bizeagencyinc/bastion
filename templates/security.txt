@@ -1,0 +1,7 @@
+# BASTION TEMPLATE: publish at https://YOUR-DOMAIN.com/.well-known/security.txt (RFC 9116)
+# Update Expires at least once a year.
+Contact: mailto:security@YOUR-DOMAIN.com
+Expires: 2027-12-31T23:59:59Z
+Preferred-Languages: en
+Canonical: https://YOUR-DOMAIN.com/.well-known/security.txt
+Policy: https://YOUR-DOMAIN.com/security-policy

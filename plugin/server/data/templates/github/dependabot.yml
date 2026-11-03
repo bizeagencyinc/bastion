@@ -1,0 +1,46 @@
+# BASTION TEMPLATE | Dependabot version and security updates
+# Rules: SUPPLY-01, SUPPLY-02, OPS-02
+# Delete the ecosystems your project does not use, or Dependabot will report errors.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule: { interval: weekly }
+    groups:
+      actions: { patterns: ["*"] }
+
+  - package-ecosystem: npm
+    directory: "/"
+    schedule: { interval: weekly }
+    open-pull-requests-limit: 10
+    groups:
+      minor-and-patch:
+        update-types: ["minor", "patch"]
+
+  # - package-ecosystem: composer      # PHP, Laravel, WordPress plugins
+  #   directory: "/"
+  #   schedule: { interval: weekly }
+
+  # - package-ecosystem: pip           # Python
+  #   directory: "/"
+  #   schedule: { interval: weekly }
+
+  # - package-ecosystem: gradle        # Android
+  #   directory: "/"
+  #   schedule: { interval: weekly }
+
+  # - package-ecosystem: pub           # Flutter
+  #   directory: "/"
+  #   schedule: { interval: weekly }
+
+  # - package-ecosystem: swift         # iOS / macOS Swift Package Manager
+  #   directory: "/"
+  #   schedule: { interval: weekly }
+
+  # - package-ecosystem: nuget         # Windows .NET
+  #   directory: "/"
+  #   schedule: { interval: weekly }
+
+  # - package-ecosystem: docker
+  #   directory: "/"
+  #   schedule: { interval: weekly }

@@ -1,0 +1,18 @@
+{
+  "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+  "chat.promptFiles": true,
+  "security.workspace.trust.enabled": true,
+  "files.associations": {
+    "*.mdc": "markdown",
+    ".clinerules": "markdown"
+  },
+  "search.exclude": {
+    "**/.env": true,
+    "**/.env.*": true,
+    "**/*.pem": true,
+    "**/*.key": true
+  },
+  "editor.formatOnSave": true,
+  "git.allowForcePush": false,
+  "git.confirmForcePush": true
+}

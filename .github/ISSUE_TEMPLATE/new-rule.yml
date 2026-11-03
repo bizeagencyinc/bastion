@@ -1,0 +1,50 @@
+name: New rule or platform
+description: Propose a new Bastion rule or platform file
+title: "[Rule] "
+labels: ["rule", "enhancement"]
+body:
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - Core (BASTION.md)
+        - Android
+        - iOS
+        - macOS
+        - Windows
+        - Cross-platform mobile
+        - Web frontend
+        - Next.js
+        - WordPress
+        - PHP / Laravel
+        - Node.js
+        - Python
+        - SQL databases
+        - Supabase / Firebase
+        - Cloud / DevOps
+        - AI / LLM / Agents
+        - Payments
+        - New platform
+    validations:
+      required: true
+  - type: textarea
+    id: rule
+    attributes:
+      label: Proposed rule text
+      description: One requirement, starting with [MUST], [MUST NOT], [SHOULD], or [MAY].
+      placeholder: "[MUST] ..."
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it matters
+      description: The attack or failure this prevents.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: Link to the standard, advisory, or official documentation.

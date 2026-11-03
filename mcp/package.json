@@ -1,0 +1,66 @@
+{
+  "name": "bastion-security-mcp",
+  "version": "2.3.0",
+  "description": "Bastion: 680+ security rules for AI coding agents as a read-only MCP server. Claude Code, Cursor, Copilot, VS Code.",
+  "mcpName": "io.github.bizeagencyinc/bastion",
+  "type": "module",
+  "bin": {
+    "bastion-mcp": "src/index.js",
+    "bastion-security-mcp": "src/index.js"
+  },
+  "main": "src/index.js",
+  "files": [
+    "src",
+    "data",
+    "README.md",
+    "LICENSE",
+    "SECURITY-MODEL.md"
+  ],
+  "scripts": {
+    "sync-data": "node scripts/sync-data.js",
+    "prepack": "node scripts/sync-data.js",
+    "test": "node --test test/*.test.js",
+    "start": "node src/index.js",
+    "self-test": "node src/index.js --self-test",
+    "build:plugin": "node scripts/build-plugin.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "security",
+    "appsec",
+    "owasp",
+    "claude",
+    "claude-code",
+    "cursor",
+    "copilot",
+    "devsecops",
+    "ai-agents",
+    "fintech"
+  ],
+  "author": "Muhammad Faisal",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bizeagencyinc/bastion.git",
+    "directory": "mcp"
+  },
+  "homepage": "https://github.com/bizeagencyinc/bastion#readme",
+  "bugs": {
+    "url": "https://github.com/bizeagencyinc/bastion/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}

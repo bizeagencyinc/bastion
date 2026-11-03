@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "anthropic.claude-code",
+    "github.copilot-chat",
+    "sonarsource.sonarlint-vscode",
+    "semgrep.semgrep",
+    "snyk-security.snyk-vulnerability-scanner",
+    "dbaeumer.vscode-eslint",
+    "redhat.vscode-yaml",
+    "editorconfig.editorconfig",
+    "davidanson.vscode-markdownlint"
+  ]
+}

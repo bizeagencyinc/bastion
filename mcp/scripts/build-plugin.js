@@ -1,0 +1,110 @@
+// =====================================================================
+// Builds the Claude Code plugin in ../plugin from the repo sources.
+//   plugin/.claude-plugin/plugin.json
+//   plugin/skills/<workflow>/SKILL.md      (from integrations/commands)
+//   plugin/skills/security-rules/SKILL.md  (auto-loaded guidance)
+//   plugin/hooks/hooks.json + guard.sh     (from hooks/guard.sh)
+//   plugin/.mcp.json                        (bundled, offline MCP server)
+//   plugin/server/dist/index.mjs + data/    (single-file esbuild bundle)
+// Run: npm run build:plugin   (from mcp/)
+// =====================================================================
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { build } from 'esbuild';
+
+const mcpDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const repo = path.resolve(mcpDir, '..');
+const out = path.join(repo, 'plugin');
+const pkg = JSON.parse(fs.readFileSync(path.join(mcpDir, 'package.json'), 'utf8'));
+const w = (p, s) => { fs.mkdirSync(path.dirname(path.join(out, p)), { recursive: true }); fs.writeFileSync(path.join(out, p), s); };
+
+fs.rmSync(out, { recursive: true, force: true });
+
+// 1. Manifest
+w('.claude-plugin/plugin.json', JSON.stringify({
+  name: 'bastion',
+  version: pkg.version,
+  description: 'Bastion security rules for AI coding agents: 680+ rules, 21 platforms, audit-to-fix workflows, secret guard hook, and a read-only MCP server.',
+  author: { name: 'Muhammad Faisal' },
+  homepage: 'https://github.com/bizeagencyinc/bastion',
+  repository: 'https://github.com/bizeagencyinc/bastion',
+  license: 'MIT',
+  keywords: ['security', 'appsec', 'owasp', 'devsecops', 'mcp', 'fintech', 'wordpress', 'nextjs', 'android', 'ios'],
+}, null, 2) + '\n');
+
+fs.mkdirSync(path.join(out, '.claude-plugin'), { recursive: true });
+fs.copyFileSync(path.join(repo, 'assets', 'icon.png'), path.join(out, '.claude-plugin', 'icon.png'));
+
+// 2. Skills from workflow commands
+const cmdDir = path.join(repo, 'integrations', 'commands');
+for (const f of fs.readdirSync(cmdDir).filter((x) => x.endsWith('.md'))) {
+  const short = f.replace(/^bastion-/, '').replace(/\.md$/, '');
+  const raw = fs.readFileSync(path.join(cmdDir, f), 'utf8');
+  const body = raw.replace(/^---\n([\s\S]*?)\n---\n/, (m, fm) => `---\n${fm}\ndisable-model-invocation: true\n---\n`);
+  w(`skills/${short}/SKILL.md`, body);
+}
+
+// 3. Always-available guidance skill
+w('skills/security-rules/SKILL.md', `---
+description: Bastion security rules. Use whenever writing, changing, or reviewing code that touches authentication, authorization, user input, databases, secrets, file uploads, payments, banking, AI features, mobile storage, or deployment config.
+---
+
+# Bastion Security Rules
+
+1. Never violate the 12 Red Lines. Get them with the \`bastion_red_lines\` tool.
+2. If the project has \`.bastion/\`, follow \`.bastion/BASTION.md\`, \`.bastion/PROJECT-RULES.md\`, and the files in \`.bastion/ACTIVE_PLATFORMS\`.
+3. Otherwise call \`bastion_detect_stack\` with the project root, then \`bastion_get_rules\` for \`core\` and each detected platform.
+4. Before finishing a change to security-relevant code, run \`bastion_review_snippet\` on the changed code and fix real hits.
+5. Cite rule IDs (for example \`AUTH-04\`, \`NEXT-02\`, \`FIN-14\`) in findings and commit messages.
+6. For full workflows use \`/bastion:secure\`, \`/bastion:audit\`, \`/bastion:review\`, \`/bastion:release\`, \`/bastion:fintech-audit\`, \`/bastion:site-audit\`.
+`);
+
+// 4. Guard hook
+w('hooks/guard.sh', fs.readFileSync(path.join(repo, 'hooks', 'guard.sh'), 'utf8'));
+fs.chmodSync(path.join(out, 'hooks', 'guard.sh'), 0o755);
+w('hooks/hooks.json', JSON.stringify({
+  hooks: {
+    PreToolUse: [{
+      matcher: 'Write|Edit|MultiEdit|NotebookEdit|Bash',
+      hooks: [{ type: 'command', command: 'bash "${CLAUDE_PLUGIN_ROOT}/hooks/guard.sh"' }],
+    }],
+  },
+}, null, 2) + '\n');
+
+// 5. Bundled MCP server (no npm install, no network)
+await build({
+  entryPoints: [path.join(mcpDir, 'src', 'index.js')],
+  bundle: true,
+  platform: 'node',
+  format: 'esm',
+  target: 'node20',
+  outfile: path.join(out, 'server', 'dist', 'index.mjs'),
+  banner: { js: `// Bastion MCP server v${pkg.version} (bundled). Source: mcp/src in the Bastion repository.\nimport { createRequire as __bastionCreateRequire } from 'node:module'; const require = __bastionCreateRequire(import.meta.url);` },
+  legalComments: 'eof',
+  logLevel: 'warning',
+});
+for (const item of ['BASTION.md', 'rules', 'templates', 'integrations/commands']) {
+  const dst = path.join(out, 'server', 'data', item);
+  fs.mkdirSync(path.dirname(dst), { recursive: true });
+  fs.cpSync(path.join(repo, item), dst, { recursive: true });
+}
+w('.mcp.json', JSON.stringify({
+  mcpServers: { bastion: { command: 'node', args: ['${CLAUDE_PLUGIN_ROOT}/server/dist/index.mjs'] } },
+}, null, 2) + '\n');
+
+w('README.md', `# Bastion plugin for Claude Code
+
+Generated by \`mcp/scripts/build-plugin.js\`. Do not edit by hand; edit the repo sources and rebuild.
+
+Install:
+
+\`\`\`bash
+claude plugin marketplace add bizeagencyinc/bastion
+claude plugin install bastion@bastion-security
+\`\`\`
+
+Includes: skills \`/bastion:secure\`, \`/bastion:audit\`, \`/bastion:review\`, \`/bastion:release\`, \`/bastion:fintech-audit\`, \`/bastion:site-audit\` and more, an auto-loaded security-rules skill, the guard hook, and the offline Bastion MCP server.
+`);
+
+console.log(`Plugin built at ${path.relative(repo, out)}/ (v${pkg.version})`);

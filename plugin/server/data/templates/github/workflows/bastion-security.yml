@@ -1,0 +1,97 @@
+# =====================================================================
+# BASTION TEMPLATE | GitHub Actions security pipeline
+# Rules: SUPPLY-01, SUPPLY-02, SUPPLY-06, SUPPLY-07, SEC-02, OPS-01 to OPS-09
+#
+# After copying: replace action version tags with full commit SHAs (OPS-02)
+# and let Dependabot keep them updated (templates/github/dependabot.yml).
+# Also enable in repo settings: Secret scanning + Push protection, Dependabot alerts,
+# Code scanning (CodeQL default setup), branch protection on main.
+# =====================================================================
+name: Bastion Security
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "17 3 * * 1"   # weekly, Monday 03:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bastion-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  secrets:
+    name: Secret scan (gitleaks)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: gitleaks
+        run: |
+          docker run --rm -v "$PWD:/repo" ghcr.io/gitleaks/gitleaks:latest \
+            detect --source /repo --redact --no-banner --exit-code 1
+
+  sast:
+    name: Static analysis (semgrep)
+    runs-on: ubuntu-latest
+    container:
+      image: semgrep/semgrep
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: semgrep
+        run: semgrep scan --config p/default --config p/secrets --error --metrics=off
+
+  deps-and-iac:
+    name: Dependencies, IaC, containers (trivy)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: trivy filesystem scan
+        run: |
+          docker run --rm -v "$PWD:/src" aquasec/trivy:latest \
+            fs --scanners vuln,misconfig,secret --severity HIGH,CRITICAL \
+            --ignore-unfixed --exit-code 1 /src
+
+  dependency-review:
+    name: Dependency review (PR only)
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/dependency-review-action@v4
+        with:
+          fail-on-severity: high
+          comment-summary-in-pr: on-failure
+
+  sbom:
+    name: SBOM (CycloneDX)
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: generate SBOM
+        run: |
+          docker run --rm -v "$PWD:/src" aquasec/trivy:latest \
+            fs --format cyclonedx --output /src/sbom.cdx.json /src
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sbom
+          path: sbom.cdx.json

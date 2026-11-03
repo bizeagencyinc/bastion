@@ -1,0 +1,26 @@
+name: Rule correction
+description: Report an outdated, unclear, or incorrect rule
+title: "[Fix] "
+labels: ["rule", "correction"]
+body:
+  - type: input
+    id: id
+    attributes:
+      label: Rule ID
+      placeholder: "NEXT-03"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong
+    validations:
+      required: true
+  - type: textarea
+    id: fix
+    attributes:
+      label: Suggested wording
+  - type: input
+    id: source
+    attributes:
+      label: Source

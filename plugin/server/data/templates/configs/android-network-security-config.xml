@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  BASTION TEMPLATE | res/xml/network_security_config.xml
+  Rules: AND-08, AND-09, AND-10
+  Reference in AndroidManifest.xml:
+    <application android:networkSecurityConfig="@xml/network_security_config" ...>
+-->
+<network-security-config>
+    <!-- Block cleartext HTTP everywhere and trust only system CAs -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+
+    <!-- Optional public key pinning for your API. Always include a backup pin. -->
+    <!--
+    <domain-config>
+        <domain includeSubdomains="true">api.YOUR-DOMAIN.com</domain>
+        <pin-set expiration="2027-12-31">
+            <pin digest="SHA-256">PRIMARY_SPKI_SHA256_BASE64=</pin>
+            <pin digest="SHA-256">BACKUP_SPKI_SHA256_BASE64=</pin>
+        </pin-set>
+    </domain-config>
+    -->
+
+    <!-- Debug builds only: allow user CAs for proxy testing -->
+    <debug-overrides>
+        <trust-anchors>
+            <certificates src="user" />
+        </trust-anchors>
+    </debug-overrides>
+</network-security-config>

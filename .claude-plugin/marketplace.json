@@ -1,0 +1,14 @@
+{
+  "name": "bastion-security",
+  "description": "Bastion: security rules, audit-to-fix workflows, and a read-only MCP server for AI coding agents",
+  "owner": {
+    "name": "Muhammad Faisal"
+  },
+  "plugins": [
+    {
+      "name": "bastion",
+      "source": "./plugin",
+      "description": "680+ security rules for web, mobile, databases, cloud, AI, and banking apps, with /bastion:secure audit-to-fix workflow, secret guard hook, and offline MCP server"
+    }
+  ]
+}

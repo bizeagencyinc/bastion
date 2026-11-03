@@ -1,0 +1,101 @@
+name: Validate Bastion
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: Shell lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: bash syntax
+        run: bash -n scripts/install.sh && bash -n hooks/guard.sh
+      - name: shellcheck
+        run: shellcheck -S warning scripts/install.sh hooks/guard.sh
+
+  install-test:
+    name: Installer test (${{ matrix.os }})
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Build fixture project
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/fixture/app" "$RUNNER_TEMP/fixture/supabase"
+          echo '{"dependencies":{"next":"latest","stripe":"latest","@supabase/supabase-js":"latest"}}' > "$RUNNER_TEMP/fixture/package.json"
+          echo 'module.exports = {}' > "$RUNNER_TEMP/fixture/next.config.js"
+      - name: Run bash installer
+        if: runner.os != 'Windows'
+        run: ./scripts/install.sh "$RUNNER_TEMP/fixture" --with-ci
+      - name: Run PowerShell installer
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: .\scripts\install.ps1 -Target "$env:RUNNER_TEMP\fixture" -WithCI
+      - name: Verify output
+        shell: bash
+        run: |
+          F="$RUNNER_TEMP/fixture"
+          test -f "$F/.bastion/BASTION.md"
+          test -f "$F/.bastion/PROJECT-RULES.md"
+          test -f "$F/.claude/commands/bastion-secure.md"
+          grep -q nextjs.md "$F/.bastion/ACTIVE_PLATFORMS"
+          grep -q payments.md "$F/.bastion/ACTIVE_PLATFORMS"
+          grep -q supabase-firebase.md "$F/.bastion/ACTIVE_PLATFORMS"
+          grep -q "BASTION:START" "$F/CLAUDE.md"
+          test -f "$F/.cursor/rules/bastion-core.mdc"
+          test -f "$F/.github/instructions/bastion-nextjs.instructions.md"
+          test -f "$F/.claude/commands/bastion-audit.md"
+          test -f "$F/.github/workflows/bastion-security.yml"
+
+  mcp:
+    name: MCP server tests and plugin sync
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+      - name: Test
+        working-directory: mcp
+        run: |
+          npm ci
+          npm test
+      - name: Plugin matches sources
+        working-directory: mcp
+        run: |
+          npm run build:plugin
+          git diff --exit-code -- ../plugin
+      - name: No network, shell, or write APIs in server source
+        run: |
+          ! grep -nE "child_process|fetch\(|node:https?|node:net|writeFile|rmSync|unlink" mcp/src/*.js
+
+  guard-test:
+    name: Guard hook test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Blocks a secret and allows clean code
+        run: |
+          KEY="AKIA$(printf 'A%.0s' {1..16})"
+          set +e
+          echo "{\"tool_name\":\"Write\",\"tool_input\":{\"file_path\":\"a.js\",\"content\":\"const k='$KEY'\"}}" | bash hooks/guard.sh
+          test $? -eq 2 || exit 1
+          echo '{"tool_name":"Write","tool_input":{"file_path":"a.js","content":"const x = 1"}}' | bash hooks/guard.sh
+          test $? -eq 0 || exit 1
