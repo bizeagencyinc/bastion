@@ -58,9 +58,23 @@
 - **LLM-22** [MUST] Never let a chatbot confirm identity, change account data, issue refunds, or reveal order details without authenticated session checks in code.
 - **LLM-23** [MUST] Show users they are talking to an AI and provide a path to a human (EU AI Act transparency).
 
+## Production AI Pipeline (API, Prompt, RAG, Tools, Auth, Guardrails, Cache, Observability)
+
+- **LLM-24** [MUST] Call model providers only from the server; keep provider API keys in a secrets manager, never in the client bundle or mobile binary.
+- **LLM-25** [MUST] Set timeouts, bounded retries with backoff, and a maximum output token limit on every model API call.
+- **LLM-26** [MUST] Version system prompts in source control and review changes like code; never build them by concatenating user input.
+- **LLM-27** [MUST] Resolve the end user's identity and role from the server session (RBAC, OAuth/OIDC) and pass it to every retrieval and tool call; never accept identity or role from the prompt or model output.
+- **LLM-28** [MUST] Run guardrails as separate checks in code before and after the model (input validation, PII and secret redaction, output schema validation, policy filters), not only as prompt text.
+- **LLM-29** [MUST] Scope response and semantic caches by tenant, user permissions, model, and prompt version; never serve a cached answer across users who have different access.
+- **LLM-30** [MUST NOT] Cache responses that contain personal data, secrets, or results of authorized tool calls unless the cache key includes the requesting user.
+- **LLM-31** [MUST] Apply the same guardrails, data rules, and region constraints to every model a router or fallback can select; fail closed if no allowed model is available.
+- **LLM-32** [MUST] Trace each request end to end (prompt version, retrieved chunk IDs, tool calls, model, tokens, cost, latency) with secrets and PII redacted.
+- **LLM-33** [MUST] Maintain an eval suite (accuracy, refusal, prompt injection, data leak cases) and run it in CI on every prompt, model, or retrieval change; block release on regression.
+- **LLM-34** [SHOULD] Alert on anomalies in cost, token use, tool-call rate, guardrail blocks, and eval scores in production.
+
 ---
 <!-- ===================== BASTION FOOTER ===================== -->
 <div align="center">
-<sub><b>BASTION v2.3.0</b> | AI, LLM, and Agent Rules | MIT License | <a href="../../README.md">Home</a> | <a href="../../BASTION.md">Core Rules</a> | Next: <a href="payments.md">Payments</a></sub>
+<sub><b>BASTION v2.3.0</b> | AI, LLM, and Agent Rules | MIT License | Created by <a href="https://bizeagency.com">BIZ E-Agency Inc</a> | <a href="../../README.md">Home</a> | <a href="../../BASTION.md">Core Rules</a> | Next: <a href="payments.md">Payments</a></sub>
 </div>
 <!-- ========================================================== -->

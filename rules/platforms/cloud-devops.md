@@ -65,6 +65,6 @@
 ---
 <!-- ===================== BASTION FOOTER ===================== -->
 <div align="center">
-<sub><b>BASTION v2.3.0</b> | Cloud and DevOps Rules | MIT License | <a href="../../README.md">Home</a> | <a href="../../BASTION.md">Core Rules</a> | Next: <a href="ai-llm-agents.md">AI, LLM, and Agents</a></sub>
+<sub><b>BASTION v2.3.0</b> | Cloud and DevOps Rules | MIT License | Created by <a href="https://bizeagency.com">BIZ E-Agency Inc</a> | <a href="../../README.md">Home</a> | <a href="../../BASTION.md">Core Rules</a> | Next: <a href="ai-llm-agents.md">AI, LLM, and Agents</a></sub>
 </div>
 <!-- ========================================================== -->

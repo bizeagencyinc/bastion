@@ -66,6 +66,6 @@ Act as a principal application security architect. Apply zero trust, defense in 
 ---
 <!-- ===================== BASTION FOOTER ===================== -->
 <div align="center">
-<sub><b>BASTION v2.3.0</b> | Lite Core | MIT License | Full rules: <code>.bastion/BASTION.md</code></sub>
+<sub><b>BASTION v2.3.0</b> | Lite Core | MIT License | Created by <a href="https://bizeagency.com">BIZ E-Agency Inc</a> | Full rules: <code>.bastion/BASTION.md</code></sub>
 </div>
 <!-- ========================================================== -->

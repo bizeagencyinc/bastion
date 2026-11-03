@@ -378,7 +378,7 @@ A change or release is done only when:
 ---
 <!-- ===================== BASTION FOOTER ===================== -->
 <div align="center">
-<sub><b>BASTION v2.3.0</b> | Core Master Rules | MIT License | Created by Muhammad Faisal<br/>
+<sub><b>BASTION v2.3.0</b> | Core Master Rules | MIT License | Created by <a href="https://bizeagency.com">BIZ E-Agency Inc</a><br/>
 <a href="README.md">Home</a> | <a href="docs/quick-start.md">Quick Start</a> | <a href="docs/integrations.md">Tool Integrations</a> | <a href="rules/platforms/">Platform Rules</a></sub>
 </div>
 <!-- ========================================================== -->

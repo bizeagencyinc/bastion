@@ -6,7 +6,7 @@
 <br/>
 
 [![Version](https://img.shields.io/badge/version-2.3.0-22D3EE?style=for-the-badge)](CHANGELOG.md)
-[![Rules](https://img.shields.io/badge/rules-681-6366F1?style=for-the-badge)](#-platform-coverage)
+[![Rules](https://img.shields.io/badge/rules-692-6366F1?style=for-the-badge)](#-platform-coverage)
 [![Platforms](https://img.shields.io/badge/platforms-21-0EA5E9?style=for-the-badge)](#-platform-coverage)
 [![License](https://img.shields.io/badge/license-MIT-10B981?style=for-the-badge)](LICENSE)
 [![PRs](https://img.shields.io/badge/PRs-welcome-F59E0B?style=for-the-badge)](CONTRIBUTING.md)
@@ -34,7 +34,7 @@ It is built on the 2025 to 2027 standards, including banking regulations (PSD2 S
 
 | Feature | What it does |
 |---|---|
-| **681 rule IDs** | Every rule is citable: `[BAS-NEXT-02] Server Action without authz` |
+| **692 rule IDs** | Every rule is citable: `[BAS-NEXT-02] Server Action without authz` |
 | **12 Red Lines** | Non-negotiable rules that block a release on any platform |
 | **6 operating modes** | `AUDIT`, `HARDEN`, `BUILD`, `REVIEW`, `INCIDENT`, `RELEASE` with clear do and do-not rules |
 | **Stack auto-detection** | The installer reads your project and loads only the matching platform rules |
@@ -140,10 +140,10 @@ Full details: [docs/integrations.md](docs/integrations.md)
 | Local and browser storage (Room, Core Data, SwiftData, Realm, Hive, Isar, MMKV, IndexedDB) | [`local-storage.md`](rules/platforms/local-storage.md) | `LOCAL` | 20 |
 | Supabase, Firebase, Appwrite, PocketBase, Convex | [`supabase-firebase.md`](rules/platforms/supabase-firebase.md) | `BAAS` | 25 |
 | Cloud, CI/CD, Docker, VPS, RDP | [`cloud-devops.md`](rules/platforms/cloud-devops.md) | `OPS` | 27 |
-| AI, LLM, RAG, agents, MCP | [`ai-llm-agents.md`](rules/platforms/ai-llm-agents.md) | `LLM` | 23 |
+| AI, LLM, RAG, agents, MCP | [`ai-llm-agents.md`](rules/platforms/ai-llm-agents.md) | `LLM` | 34 |
 | Payments (Stripe, PayPal, wallets) | [`payments.md`](rules/platforms/payments.md) | `PAY` | 19 |
 | **Banking and fintech** (banking apps, wallets, lending, trading, crypto, open banking, KYC/AML) | [`financial-banking.md`](rules/platforms/financial-banking.md) | `FIN` | 63 |
-| **Total** | | | **681** |
+| **Total** | | | **692** |
 
 ## ⌨️ Slash Commands
 
@@ -257,7 +257,7 @@ No ruleset makes software unhackable. Bastion reduces risk; it does not replace 
 
 **BASTION v2.3.0** | Security Rules for AI Coding Agents
 
-Created by **Muhammad Faisal** | Released under the [MIT License](LICENSE)
+Created by **[BIZ E-Agency Inc](https://bizeagency.com)** | Released under the [MIT License](LICENSE)
 
 <sub>If Bastion helps you ship safer code, give the repo a ⭐ so others can find it.</sub>
 

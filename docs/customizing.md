@@ -60,6 +60,6 @@ Create `rules/platforms/org-overrides.md` with your company rules (prefix `ORG`)
 ---
 <!-- ===================== BASTION FOOTER ===================== -->
 <div align="center">
-<sub><b>BASTION v2.3.0</b> | Customizing | MIT License | <a href="../README.md">Home</a> | <a href="quick-start.md">Quick Start</a></sub>
+<sub><b>BASTION v2.3.0</b> | Customizing | MIT License | Created by <a href="https://bizeagency.com">BIZ E-Agency Inc</a> | <a href="../README.md">Home</a> | <a href="quick-start.md">Quick Start</a></sub>
 </div>
 <!-- ========================================================== -->

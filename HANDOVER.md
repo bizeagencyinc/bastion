@@ -18,7 +18,7 @@
 
 | Area | Status |
 |---|---|
-| Rules: 681 IDs (158 core + 523 in 21 platform files incl. databases and banking) | Done |
+| Rules: 692 IDs (158 core + 534 in 21 platform files incl. databases and banking) | Done |
 | Installers (Bash, PowerShell) with stack detection, project rules, `--with-ci`, `--with-mcp` | Bash tested; **PowerShell not yet run** (CI runs it on Windows) |
 | Guard hook | Done, tested |
 | MCP server `mcp/` (9 read-only tools, 10 prompts, 3 resources) | Done, 8 end-to-end tests pass; health check `√ Connected` in Claude Code 2.1.317 |
@@ -99,6 +99,6 @@ tagging a release, or changing repo settings. Never print tokens. Do not use em 
 ---
 <!-- ===================== BASTION FOOTER ===================== -->
 <div align="center">
-<sub><b>BASTION v2.3.0</b> | Handover | MIT License | <a href="README.md">Home</a> | <a href="CLAUDE.md">Maintainer Guide</a> | <a href="docs/mcp.md">MCP and Plugin</a></sub>
+<sub><b>BASTION v2.3.0</b> | Handover | MIT License | Created by <a href="https://bizeagency.com">BIZ E-Agency Inc</a> | <a href="README.md">Home</a> | <a href="CLAUDE.md">Maintainer Guide</a> | <a href="docs/mcp.md">MCP and Plugin</a></sub>
 </div>
 <!-- ========================================================== -->

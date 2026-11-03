@@ -60,6 +60,6 @@
 ---
 <!-- ===================== BASTION FOOTER ===================== -->
 <div align="center">
-<sub><b>BASTION v2.3.0</b> | Windows Rules | MIT License | <a href="../../README.md">Home</a> | <a href="../../BASTION.md">Core Rules</a> | Next: <a href="cross-platform-mobile.md">Cross-Platform Mobile</a></sub>
+<sub><b>BASTION v2.3.0</b> | Windows Rules | MIT License | Created by <a href="https://bizeagency.com">BIZ E-Agency Inc</a> | <a href="../../README.md">Home</a> | <a href="../../BASTION.md">Core Rules</a> | Next: <a href="cross-platform-mobile.md">Cross-Platform Mobile</a></sub>
 </div>
 <!-- ========================================================== -->

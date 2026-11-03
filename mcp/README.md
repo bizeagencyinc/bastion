@@ -4,7 +4,7 @@
 
 # Bastion MCP Server
 
-**681 security rules for AI coding agents, served over MCP. Read-only, offline, no telemetry.**
+**692 security rules for AI coding agents, served over MCP. Read-only, offline, no telemetry.**
 
 [![npm](https://img.shields.io/npm/v/bastion-security-mcp?color=22D3EE&style=for-the-badge)](https://www.npmjs.com/package/bastion-security-mcp)
 [![MCP Registry](https://img.shields.io/badge/MCP_Registry-io.github.YOUR--USERNAME%2Fbastion-6366F1?style=for-the-badge)](https://registry.modelcontextprotocol.io)
@@ -95,4 +95,4 @@ When run from the repo, the server reads the rules from the repo root. `npm pack
 
 ---
 
-<div align="center"><sub><b>BASTION v2.3.0</b> | MIT License | Created by Muhammad Faisal</sub></div>
+<div align="center"><sub><b>BASTION v2.3.0</b> | MIT License | Created by <a href="https://bizeagency.com">BIZ E-Agency Inc</a></sub></div>
